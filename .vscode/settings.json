@@ -18,7 +18,7 @@
     "yaml": false,
     "plaintext": false
   },
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Dark+",
   "editor.minimap.enabled": true,
   "editor.wordWrap": "on",
   "files.autoSave": "afterDelay",
