@@ -22,8 +22,8 @@ export function SentimentTimeline({ items }: SentimentTimelineProps) {
 
   if (timestamped.length === 0) {
     return (
-      <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-5">
-        <h3 className="text-sm font-medium text-gray-400 mb-4">Sentiment Over Time</h3>
+      <div className="bg-white border border-gray-200 rounded-xl p-5">
+        <h3 className="text-sm font-medium text-gray-600 mb-4">Sentiment Over Time</h3>
         <p className="text-gray-500 text-sm text-center py-10">
           No timestamped data available. CSV survey data has no timestamps.
         </p>
@@ -50,20 +50,20 @@ export function SentimentTimeline({ items }: SentimentTimelineProps) {
     }));
 
   return (
-    <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-5">
-      <h3 className="text-sm font-medium text-gray-400 mb-1">Sentiment Over Time</h3>
+    <div className="bg-white border border-gray-200 rounded-xl p-5">
+      <h3 className="text-sm font-medium text-gray-600 mb-1">Sentiment Over Time</h3>
       <p className="text-xs text-gray-500 mb-4">Timestamped sources only (HN, GitHub, Reddit). CSV excluded.</p>
       <div className="h-72">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ left: 10, right: 10 }}>
-            <XAxis dataKey="month" stroke="#6b7280" fontSize={11} />
-            <YAxis stroke="#6b7280" fontSize={12} />
+            <XAxis dataKey="month" stroke="#9ca3af" fontSize={11} />
+            <YAxis stroke="#9ca3af" fontSize={12} />
             <Tooltip
               contentStyle={{
-                backgroundColor: '#1f2937',
-                border: '1px solid #374151',
+                backgroundColor: '#ffffff',
+                border: '1px solid #e5e7eb',
                 borderRadius: '8px',
-                color: '#e5e7eb',
+                color: '#374151',
               }}
             />
             <Legend />

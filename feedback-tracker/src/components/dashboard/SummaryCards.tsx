@@ -31,32 +31,32 @@ export function SummaryCards({ items }: SummaryCardsProps) {
       value: totalCount.toString(),
       subtitle: `${sources.size} source${sources.size !== 1 ? 's' : ''}`,
       icon: MessageSquare,
-      color: 'text-indigo-400',
-      bg: 'bg-indigo-500/10',
+      color: 'text-indigo-600',
+      bg: 'bg-indigo-50',
     },
     {
       title: 'Avg NPS Score',
       value: avgNps === 'N/A' ? avgNps : `${avgNps}/10`,
       subtitle: `${csvItems.length} survey responses`,
       icon: Star,
-      color: 'text-amber-400',
-      bg: 'bg-amber-500/10',
+      color: 'text-amber-600',
+      bg: 'bg-amber-50',
     },
     {
       title: 'Feature Requests',
       value: featureRequests.toString(),
       subtitle: `${totalCount > 0 ? ((featureRequests / totalCount) * 100).toFixed(0) : 0}% of total`,
       icon: TrendingUp,
-      color: 'text-lime-400',
-      bg: 'bg-lime-500/10',
+      color: 'text-lime-600',
+      bg: 'bg-lime-50',
     },
     {
       title: 'Sentiment Split',
       value: `${totalCount > 0 ? ((positive / totalCount) * 100).toFixed(0) : 0}% positive`,
       subtitle: `👍 ${positive}  😐 ${neutral}  👎 ${negative}`,
       icon: BarChart3,
-      color: 'text-emerald-400',
-      bg: 'bg-emerald-500/10',
+      color: 'text-emerald-600',
+      bg: 'bg-emerald-50',
     },
   ];
 
@@ -65,15 +65,15 @@ export function SummaryCards({ items }: SummaryCardsProps) {
       {cards.map((card) => (
         <div
           key={card.title}
-          className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-5 hover:border-gray-600/50 transition-colors"
+          className="bg-white border border-gray-200 rounded-xl p-5 hover:border-gray-300 transition-colors"
         >
           <div className="flex items-center justify-between mb-3">
-            <span className="text-sm text-gray-400">{card.title}</span>
+            <span className="text-sm text-gray-600">{card.title}</span>
             <div className={`p-2 rounded-lg ${card.bg}`}>
               <card.icon className={`w-4 h-4 ${card.color}`} />
             </div>
           </div>
-          <p className="text-2xl font-bold text-white">{card.value}</p>
+          <p className="text-2xl font-bold text-gray-900">{card.value}</p>
           <p className="text-xs text-gray-500 mt-1">{card.subtitle}</p>
         </div>
       ))}

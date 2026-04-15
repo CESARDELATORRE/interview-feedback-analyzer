@@ -32,19 +32,19 @@ export function SentimentBySource({ items }: SentimentBySourceProps) {
   }));
 
   return (
-    <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-5">
-      <h3 className="text-sm font-medium text-gray-400 mb-4">Sentiment by Source</h3>
+    <div className="bg-white border border-gray-200 rounded-xl p-5">
+      <h3 className="text-sm font-medium text-gray-600 mb-4">Sentiment by Source</h3>
       <div className="h-72">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} margin={{ left: 10, right: 10 }}>
-            <XAxis dataKey="source" stroke="#6b7280" fontSize={12} />
-            <YAxis stroke="#6b7280" fontSize={12} />
+            <XAxis dataKey="source" stroke="#9ca3af" fontSize={12} />
+            <YAxis stroke="#9ca3af" fontSize={12} />
             <Tooltip
               contentStyle={{
-                backgroundColor: '#1f2937',
-                border: '1px solid #374151',
+                backgroundColor: '#ffffff',
+                border: '1px solid #e5e7eb',
                 borderRadius: '8px',
-                color: '#e5e7eb',
+                color: '#374151',
               }}
             />
             <Legend />

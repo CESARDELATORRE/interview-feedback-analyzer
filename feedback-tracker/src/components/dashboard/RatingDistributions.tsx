@@ -47,20 +47,20 @@ export function RatingDistributions({ items }: RatingDistributionsProps) {
   });
 
   return (
-    <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-5">
-      <h3 className="text-sm font-medium text-gray-400 mb-1">Survey Rating Averages</h3>
+    <div className="bg-white border border-gray-200 rounded-xl p-5">
+      <h3 className="text-sm font-medium text-gray-600 mb-1">Survey Rating Averages</h3>
       <p className="text-xs text-gray-500 mb-4">From {csvItems.length} CSV survey responses (1-5 scale)</p>
       <div className="h-72">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={averages} margin={{ left: 10, right: 20 }}>
-            <XAxis dataKey="name" stroke="#6b7280" fontSize={11} angle={-25} textAnchor="end" height={60} />
-            <YAxis stroke="#6b7280" fontSize={12} domain={[0, 5]} />
+            <XAxis dataKey="name" stroke="#9ca3af" fontSize={11} angle={-25} textAnchor="end" height={60} />
+            <YAxis stroke="#9ca3af" fontSize={12} domain={[0, 5]} />
             <Tooltip
               contentStyle={{
-                backgroundColor: '#1f2937',
-                border: '1px solid #374151',
+                backgroundColor: '#ffffff',
+                border: '1px solid #e5e7eb',
                 borderRadius: '8px',
-                color: '#e5e7eb',
+                color: '#374151',
               }}
               formatter={(value) => [`${Number(value).toFixed(2)} / 5`, 'Average']}
             />

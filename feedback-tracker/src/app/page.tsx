@@ -18,7 +18,7 @@ export default async function DashboardPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white">Dashboard</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
           <p className="text-sm text-gray-500 mt-1">
             Analyzing {items.length} feedback items
             {lastRefreshed && (
@@ -28,18 +28,18 @@ export default async function DashboardPage() {
         </div>
       </div>
 
-      <SummaryCards items={items} />
+      <RatingDistributions items={items} />
+
+      <SentimentTimeline items={items} />
+
+      <SentimentBySource items={items} />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <SentimentChart items={items} />
         <TopThemesChart items={items} />
       </div>
 
-      <SentimentBySource items={items} />
-
-      <SentimentTimeline items={items} />
-
-      <RatingDistributions items={items} />
+      <SummaryCards items={items} />
     </div>
   );
 }

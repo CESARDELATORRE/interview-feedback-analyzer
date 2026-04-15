@@ -42,25 +42,25 @@ export function TopThemesChart({ items }: TopThemesChartProps) {
     .sort((a, b) => b.count - a.count);
 
   return (
-    <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-5">
-      <h3 className="text-sm font-medium text-gray-400 mb-4">Top Themes</h3>
+    <div className="bg-white border border-gray-200 rounded-xl p-5">
+      <h3 className="text-sm font-medium text-gray-600 mb-4">Top Themes</h3>
       <div className="h-64">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} layout="vertical" margin={{ left: 30, right: 20 }}>
-            <XAxis type="number" stroke="#6b7280" fontSize={12} />
+            <XAxis type="number" stroke="#9ca3af" fontSize={12} />
             <YAxis
               type="category"
               dataKey="theme"
-              stroke="#6b7280"
+              stroke="#9ca3af"
               fontSize={12}
               width={110}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: '#1f2937',
-                border: '1px solid #374151',
+                backgroundColor: '#ffffff',
+                border: '1px solid #e5e7eb',
                 borderRadius: '8px',
-                color: '#e5e7eb',
+                color: '#374151',
               }}
             />
             <Bar dataKey="count" radius={[0, 4, 4, 0]}>

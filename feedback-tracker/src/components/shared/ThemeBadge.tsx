@@ -1,13 +1,13 @@
 import { ThemeLabel, THEME_LABELS } from '@/lib/types';
 
 const THEME_COLORS: Record<ThemeLabel, string> = {
-  'agent-mode': 'bg-violet-500/20 text-violet-300',
-  'code-completion': 'bg-blue-500/20 text-blue-300',
-  'performance': 'bg-orange-500/20 text-orange-300',
-  'model-quality': 'bg-cyan-500/20 text-cyan-300',
-  'usability': 'bg-pink-500/20 text-pink-300',
-  'feature-request': 'bg-lime-500/20 text-lime-300',
-  'other': 'bg-gray-500/20 text-gray-300',
+  'agent-mode': 'bg-violet-100 text-violet-700',
+  'code-completion': 'bg-blue-100 text-blue-700',
+  'performance': 'bg-orange-100 text-orange-700',
+  'model-quality': 'bg-cyan-100 text-cyan-700',
+  'usability': 'bg-pink-100 text-pink-700',
+  'feature-request': 'bg-lime-100 text-lime-700',
+  'other': 'bg-gray-100 text-gray-700',
 };
 
 export function ThemeBadge({ theme }: { theme: ThemeLabel }) {

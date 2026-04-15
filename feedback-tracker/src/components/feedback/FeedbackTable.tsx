@@ -51,12 +51,12 @@ export function FeedbackTable({ items }: FeedbackTableProps) {
           placeholder="Search feedback..."
           value={searchQuery}
           onChange={(e) => { setSearchQuery(e.target.value); setPage(1); }}
-          className="px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-indigo-500 flex-1 min-w-[200px]"
+          className="px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 flex-1 min-w-[200px]"
         />
         <select
           value={sourceFilter}
           onChange={(e) => { setSourceFilter(e.target.value); setPage(1); }}
-          className="px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 focus:outline-none focus:border-indigo-500"
+          className="px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
         >
           <option value="all">All Sources</option>
           {Object.entries(SOURCE_LABELS).map(([key, label]) => (
@@ -66,7 +66,7 @@ export function FeedbackTable({ items }: FeedbackTableProps) {
         <select
           value={sentimentFilter}
           onChange={(e) => { setSentimentFilter(e.target.value); setPage(1); }}
-          className="px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 focus:outline-none focus:border-indigo-500"
+          className="px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
         >
           <option value="all">All Sentiment</option>
           <option value="positive">😊 Positive</option>
@@ -76,7 +76,7 @@ export function FeedbackTable({ items }: FeedbackTableProps) {
         <select
           value={themeFilter}
           onChange={(e) => { setThemeFilter(e.target.value); setPage(1); }}
-          className="px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 focus:outline-none focus:border-indigo-500"
+          className="px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
         >
           <option value="all">All Themes</option>
           {Object.entries(THEME_LABELS).map(([key, label]) => (
@@ -92,22 +92,22 @@ export function FeedbackTable({ items }: FeedbackTableProps) {
       </p>
 
       {/* Table */}
-      <div className="overflow-x-auto rounded-xl border border-gray-700/50">
+      <div className="overflow-x-auto rounded-xl border border-gray-200">
         <table className="w-full text-sm">
-          <thead className="bg-gray-800/80">
+          <thead className="bg-gray-50">
             <tr>
-              <th className="text-left px-4 py-3 text-gray-400 font-medium">Source</th>
-              <th className="text-left px-4 py-3 text-gray-400 font-medium">Sentiment</th>
-              <th className="text-left px-4 py-3 text-gray-400 font-medium">Themes</th>
-              <th className="text-left px-4 py-3 text-gray-400 font-medium">Feedback</th>
-              <th className="text-left px-4 py-3 text-gray-400 font-medium w-10"></th>
+              <th className="text-left px-4 py-3 text-gray-600 font-medium">Source</th>
+              <th className="text-left px-4 py-3 text-gray-600 font-medium">Sentiment</th>
+              <th className="text-left px-4 py-3 text-gray-600 font-medium">Themes</th>
+              <th className="text-left px-4 py-3 text-gray-600 font-medium">Feedback</th>
+              <th className="text-left px-4 py-3 text-gray-600 font-medium w-10"></th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-700/50">
+          <tbody className="divide-y divide-gray-200">
             {paginated.map((item) => (
-              <tr key={item.id} className="hover:bg-gray-800/30 transition-colors">
+              <tr key={item.id} className="hover:bg-gray-50 transition-colors">
                 <td className="px-4 py-3">
-                  <span className="text-xs font-medium text-gray-300">
+                  <span className="text-xs font-medium text-gray-700">
                     {SOURCE_LABELS[item.source]}
                   </span>
                 </td>
@@ -122,8 +122,8 @@ export function FeedbackTable({ items }: FeedbackTableProps) {
                   </div>
                 </td>
                 <td className="px-4 py-3 max-w-md">
-                  <p className="text-gray-300 line-clamp-2 text-xs leading-relaxed">
-                    {item.title && <strong className="text-gray-200">{item.title}: </strong>}
+                  <p className="text-gray-700 line-clamp-2 text-xs leading-relaxed">
+                    {item.title && <strong className="text-gray-900">{item.title}: </strong>}
                     {item.text}
                   </p>
                 </td>
@@ -133,7 +133,7 @@ export function FeedbackTable({ items }: FeedbackTableProps) {
                       href={item.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-500 hover:text-indigo-400 transition-colors"
+                      className="text-gray-400 hover:text-indigo-600 transition-colors"
                     >
                       <ExternalLink className="w-4 h-4" />
                     </a>
@@ -151,7 +151,7 @@ export function FeedbackTable({ items }: FeedbackTableProps) {
           <button
             onClick={() => setPage(Math.max(1, page - 1))}
             disabled={page === 1}
-            className="px-4 py-2 text-sm bg-gray-800 border border-gray-700 rounded-lg text-gray-300 disabled:opacity-40 hover:bg-gray-700 transition-colors"
+            className="px-4 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-700 disabled:opacity-40 hover:bg-gray-50 transition-colors"
           >
             ← Previous
           </button>
@@ -161,7 +161,7 @@ export function FeedbackTable({ items }: FeedbackTableProps) {
           <button
             onClick={() => setPage(Math.min(totalPages, page + 1))}
             disabled={page === totalPages}
-            className="px-4 py-2 text-sm bg-gray-800 border border-gray-700 rounded-lg text-gray-300 disabled:opacity-40 hover:bg-gray-700 transition-colors"
+            className="px-4 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-700 disabled:opacity-40 hover:bg-gray-50 transition-colors"
           >
             Next →
           </button>

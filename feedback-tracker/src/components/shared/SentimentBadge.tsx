@@ -12,9 +12,9 @@ export function SentimentBadge({ sentiment }: { sentiment: SentimentLabel }) {
     <span
       className={cn(
         'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium',
-        sentiment === 'positive' && 'bg-emerald-500/20 text-emerald-300',
-        sentiment === 'neutral' && 'bg-amber-500/20 text-amber-300',
-        sentiment === 'negative' && 'bg-red-500/20 text-red-300'
+        sentiment === 'positive' && 'bg-emerald-100 text-emerald-700',
+        sentiment === 'neutral' && 'bg-amber-100 text-amber-700',
+        sentiment === 'negative' && 'bg-red-100 text-red-700'
       )}
     >
       {sentimentEmoji[sentiment]} {sentiment}
